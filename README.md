@@ -68,7 +68,7 @@ ALU16 alu_inst (
 
 - Bizoi Fabian-Mario
 - Blaga Cristian-Marian
-- Ioana..
+- Daichendt Ioana-Patricia
 
 
 ---
