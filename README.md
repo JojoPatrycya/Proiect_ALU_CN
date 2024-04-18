@@ -1,7 +1,5 @@
-Writing a README file is a great way to document your project and make it easier for others to understand and use. Here's a template you can use to write your README:
 
 ---
-
 # ALU Module in Verilog
 
 This project implements an Arithmetic Logic Unit (ALU) module in Verilog. The ALU can perform various arithmetic and logical operations based on the given opcode.
