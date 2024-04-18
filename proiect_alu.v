@@ -249,7 +249,6 @@ module ALU16 (
   input signed [15:0] B,
   input [3:0] op,
   output reg signed [15:0] out,
-  output reg overflow,
   output reg zero,
   input clk,
   input reset
@@ -328,25 +327,25 @@ module ALU16 (
         zero <= (out == 0);
       end
       9: begin // (AND)
-	      out<= and_result[15:0];
-	      zero <= (out ==0);
+	 out<= and_result[15:0];
+	 zero <= (out ==0);
       end
       10: begin // (OR)
-	      out <= or_result[15:0];
-	      zero <= (out == 0);
+	  out <= or_result[15:0];
+	  zero <= (out == 0);
       end
       11: begin //booth
-	      out<=product2[15:0];
-        zero <= (out == 0);
+	  out<=product2[15:0];
+          zero <= (out == 0);
       end
       12: begin //non_restoring division
-	      out<=quotient2[15:0];
-        zero <= (out == 0);
+	  out<=quotient2[15:0];
+          zero <= (out == 0);
       end
       
       default: begin
-        out <= 0;
-        zero <= 1;
+          out <= 0;
+          zero <= 1;
       end
     endcase
   end
