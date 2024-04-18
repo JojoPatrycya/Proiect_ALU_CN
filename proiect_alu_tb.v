@@ -10,20 +10,20 @@ module ALU16_Testbench;
    
   // Outputs
   wire signed [15:0] out;
-  wire overflow;
   wire zero;
   
    
 
   // Instantiate the ALU16 module
-  ALU16 alu_inst ( .A(A), .B(B), .op(op), .out(out), .overflow(overflow), .zero(zero),.clk(clk));
+  ALU16 alu_inst ( .A(A), .B(B), .op(op), .out(out), .reset(reset), .zero(zero),.clk(clk));
 
   // Test procedure
   initial begin
     clk = 0;
     reset = 1;
     // Test addition with various values
-    clk=1;
+     
+    clk = 1;
     A = -16'd529;
     B = 16'd10;
     op = 4'b0000;  // Addition operation code
@@ -49,7 +49,7 @@ module ALU16_Testbench;
 
     #10;
     
-    // Test multiplication with various values (may overflow for larger values)
+    // Test multiplication with various values 
     A = 16'd30;
     B = -16'd41;
     op = 4'b0010;  // Multiplication operation code
@@ -80,7 +80,7 @@ module ALU16_Testbench;
     // Test shift left with various values
     A = 16'd85;
     op = 4'b0100;  // Shift left operation code
-    B = 4;        // Number of positions to shift (modify as needed)
+    B = 4;        // Number of positions to shift 
 
     #10;
     $display("Test 5: Shift Left (A = %d, B = %d)", A, B);
@@ -195,7 +195,7 @@ module ALU16_Testbench;
 
        
      reset = 0;
-    #100; // Wait for some time to allow observation
+    #100; // Wait for some time
      
     $finish;
   end
